@@ -4,8 +4,10 @@ Plugin Name: Jquery Validation For Contact Form 7 (Lite)
 Plugin URI: http://dnesscarkey.com/jquery-validation/
 Description: This plugin integrates jquery validation in contact form 7
 Author: Dnesscarkey
-Version: 5.4.2
+Version: 5.4.3
 Author URI: http://dnesscarkey.com/jquery-validation/
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 define ('JVCF7_FILE_PATH', plugin_dir_path( __FILE__ ));

@@ -4,7 +4,9 @@ Donate link: https://dnesscarkey.com/jquery-validation/buy-now/
 Tags: form validation, jquery validation, javascript validation, js validation, extra validation
 Requires at least: 3.0
 Tested up to: 6.9
-Stable tag: 5.4.2
+Stable tag: 5.4.3
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 New standard of advance validation for Contact Form 7.
 
@@ -113,6 +115,9 @@ With <a href="https://dnesscarkey.com/jquery-validation/buy-now/">Jquery Validat
 1. Validation Error None (Lite Version)
 
 == Changelog ==
+
+= 5.4.3 =
+* Fixed critical JavaScript bugs and email validation TLD limits.
 
 = 5.4.2 =
 * Using latest version Jquery validation 1.19.5

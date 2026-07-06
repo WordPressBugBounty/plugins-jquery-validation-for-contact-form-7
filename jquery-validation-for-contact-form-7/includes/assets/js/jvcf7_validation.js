@@ -14,9 +14,6 @@ jQuery(document).ready(function(){
 			onfocusout: function(element) { // ADD VALIDATION ON BLUR
 		        this.element(element);  
 		    },
-			onfocusout: function(element) { // ADD VALIDATION ON BLUR
-		        this.element(element);  
-		    },
 			errorPlacement: function(error, element) {
 	            if (element.is(':checkbox') || element.is(':radio')){
 	            	error.insertAfter(jQuery(element).parent().parent().parent());
@@ -28,19 +25,22 @@ jQuery(document).ready(function(){
 	});
 
 	jQuery('.wpcf7-form-control.wpcf7-submit').click(function(e){ 
-		$jvcfpValidation 	=	jQuery(this).parents('form');		
-		if (!jQuery($jvcfpValidation).valid()){
+		var $jvcfpValidation = jQuery(this).parents('form');		
+		if (!$jvcfpValidation.valid()){
 			e.preventDefault();
-			$topErrorPosition 		= jQuery('.wpcf7-form-control.error').offset().top;
-			$topErrorPosition		= parseInt($topErrorPosition) - 100;
-			jQuery('body, html').animate({scrollTop:$topErrorPosition}, 'normal');
+			var $errorElements = $jvcfpValidation.find('.wpcf7-form-control.error');
+			if ($errorElements.length) {
+				var $topErrorPosition = $errorElements.offset().top;
+				$topErrorPosition = parseInt($topErrorPosition) - 100;
+				jQuery('body, html').animate({scrollTop:$topErrorPosition}, 'normal');
+			}
 		}
 	});	
 });
 
 jQuery.validator.addMethod("email", 
     function(value, element) {
-        return this.optional(element) || /^[+\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/i.test(value);
+        return this.optional(element) || /^[+\w\-\.]+@([\w\-]+\.)+[\w\-]{2,63}$/i.test(value);
     },"Please enter a valid email address"
 );
 
